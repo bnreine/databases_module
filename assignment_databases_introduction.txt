@@ -1,0 +1,124 @@
+1. What data types do each of these values represent?
+
+
+  1. "A Clockwork Orange" ---> string (in JavaScript or Database terminology)
+  2. 42 ---> number (in JavaScript) OR numeric value (in Database terminology)
+  3. 09/02/1945  ---> string (in JavaScript as long as it's wrapped in quotes) OR date (in Database terminology)
+  4. 98.7 ---> number (in JavaScript) OR numeric value (in Database terminology)
+  5. $15.99 ---> string (in JavaScript as long as it's wrapped in quotes) OR price numeric value (in Database terminology)
+
+2. Explain when a database would be used. Explain when a text file would be used.
+
+You use a database if you need to store data that multiple users can access at the same time.  You use a text file if only
+one person or computer needs to access it.
+
+3. Describe one difference between SQL and other programming languages.
+
+It is declarative.
+
+4. In your own words, explain how the pieces of a database system fit together at a high level.
+
+  Each database is a table with column headings, row headings and entries for everything inside.
+  Each column contains related data.  Each row contains different information about a specific instance (eg. a user)
+  categorized by the column headings.
+
+5. Explain the meaning of table, row, column, and value.
+
+  A table is the database.  A row represents a particular instance that contains different data from each of the column headings.
+  A column shows related data for each instance.   A value is the piece of data stored in each cell of the database.
+
+6. List three data types that can be used in a table.
+
+Programming Terminology:
+string
+number
+object
+
+OR
+
+Database Terminology:
+date
+numeric value
+object
+
+7. Given this payments table, provide an English description of the following queries and include their results:
+
+     SELECT date, amount
+     FROM payments;
+
+     select the date and the amount in the payments database
+     result:
+     first column (date)---> shows all dates in order top to bottom
+     second column (amount)--> shows all amounts in order top to bottom
+
+
+
+
+     SELECT amount
+     FROM payments
+     WHERE amount > 500;
+
+      Select amount from payments database where amount is greater than 500.
+      result: (amount) 1500
+
+
+
+     SELECT *
+     FROM payments
+     WHERE payee = 'Mega Foods';
+
+     Select all column categories from payments database where payee is Mega Foods
+     results:
+     first column (date)---> 5/15/2016
+     second column (payee)---> Mega Foods
+     third column (amount)---> 124.93
+     fourth column (memo) ---> Groceries
+
+
+
+8. Given this users table, write SQL queries using the following criteria and include the output:
+
+a) The email and sign-up date for the user named DeAndre Data.
+
+SQL query:
+
+SELECT email, signup
+FROM users
+WHERE name = 'DeAndre Data';
+
+
+Result:
+first column (email)---> datad@comcast.net
+second column (signup)---> 2008-01-20
+
+
+
+b) The user ID for the user with email 'aleesia.algorithm@uw.edu'.
+
+SQL query:
+
+SELECT userid
+FROM users
+WHERE email = 'aleesia.algorithm@uw.edu';
+
+
+Result:
+first column (userid)---> 1
+
+
+
+
+c) All the columns for the user ID equal to 4.
+
+SQL query:
+
+SELECT *
+FROM users
+WHERE userid = 4;
+
+
+Result:
+first column (userid)---> 4
+second column (name)---> Brandy Boolean
+third column (email)--->	bboolean@nasa.gov
+fourth column (signup) --> 1999-10-15
