@@ -1,0 +1,171 @@
+1. Write out a generic SELECT statement.
+  Assume: table called 'cupboard' and column called 'drinks'
+
+  SELECT drinks
+  FROM cupboard
+  WHERE drinks LIKE 'Jim%';
+
+
+2. Create a fun way to remember the order of operations in a SELECT statement,
+such as a mnemonic.
+
+I'm not sure what you mean by order of operations in a select statement.  The
+closest thing I could find was order of operations in a SQL query.  I think
+that's what you mean.  Please advise if not.
+
+Frozen Whales Giggle Heaving Saggy Orphans
+
+(F) FROM
+(W) WHERE
+(G) GROUP BY
+(H) HAVING
+(S) SELECT
+(O) ORDER BY
+
+
+3. Given this dogs table, write queries to select the following pieces of data:
+
+
+******Inside database "catsAndDogs"****************
+
+
+****Intake teams typically guess the breed of shelter dogs, so the breed column
+may have multiple words (for example, "Labrador Collie mix").
+
+  -Display the name, gender, and age of all dogs that are part Labrador.
+
+SELECT name, gender, age
+FROM dogs
+WHERE breed LIKE '%labrador%';
+
+  -Display the ids of all dogs that are under 1 year old.
+
+SELECT id
+FROM dogs
+WHERE age < 1;
+
+  -Display the name and age of all dogs that are female and over 35 lbs.
+
+SELECT name, age
+FROM dogs
+WHERE gender='F' AND weight > 35;
+
+  -Display all of the information about all dogs that are not Shepherd mixes.
+
+SELECT *
+FROM dogs
+WHERE NOT breed LIKE '%shepherd%';
+
+  -Display the id, age, weight, and breed of all dogs that are either over
+  60 lbs or Great Danes.
+
+SELECT id, age, weight, breed
+FROM dogs
+WHERE weight > 60 OR breed='Great Danes';
+
+
+
+4. Given this cats table, what records are returned from these queries?
+
+  -SELECT name, adoption_date FROM cats;
+
+It returns the name and adoption_date of all cats from the cats table.  See below.
+
+name   | adoption_date
+----------+---------------
+Mushi    | 2016-03-22
+Seashell |
+Azul     | 2016-04-17
+Victoire | 2016-09-01
+Nala     |
+
+
+
+  -SELECT name, age FROM cats;
+
+It returns the name and age of all cats from the cats table. See blelow
+
+name   | age
+----------+-----
+Mushi    |   1
+Seashell |   7
+Azul     |   3
+Victoire |   7
+Nala     |   1
+
+
+
+5. From the cats table, write queries to select the following pieces of data.
+  -Display all the information about all of the available cats.
+
+SELECT *
+FROM cats;
+
+
+  -Display the name and sex of all cats who are 7 years old.
+
+SELECT name, gender
+FROM cats
+WHERE age=7;
+
+  -Find all of the names of the cats, so you don’t choose duplicate names for
+  new cats.
+
+SELECT name
+FROM cats;
+
+
+6. List each comparison operator and explain when you would use it. Include a
+real world example for each.
+
+=    -----> Check for equality.  Eg. Check if number of skittles in bag is 50
+!= or <>  -----> Check for inequality. Eg. Check if account is not frozen
+<   ------> check if entry is less than certain amount. Eg. Check if number
+of audits is less than 5
+<=    -----> check if entry is less than or equal to a certain amount. Eg. Check
+if number of balloons in bag is less than or equal to 7.
+>   -----> check if entry is greater than a certain amount.  Eg. Check if boat
+length is greater than 56 feet
+>=   ----> Check if entry is greater than or equal to a certain amount. Eg. Check
+if sasquatch has traveled greater than or equal to 700 miles.
+
+  -If you can’t list these from memory, do these flashcards until you can!
+
+7. From the cats table, what data is returned from these queries?
+
+The formatting on the single tick marks weren't correct, so I changed them.
+
+  -SELECT name FROM cats WHERE gender = 'F';
+
+  name
+----------
+Seashell
+Nala
+
+
+
+
+Again, formatting was incorrect from copy pasting into this text file, so I wrote it
+in manually.
+
+  -SELECT name FROM cats WHERE age<>3;
+
+  name
+----------
+Mushi
+Seashell
+Victoire
+Nala
+
+
+
+
+
+The formatting on the single tick marks weren't correct, so I changed them.
+
+  -SELECT ID FROM cats WHERE name != ‘Mushi’ AND gender = ‘M’;
+
+  id
+ ----
+   3
+   4
